@@ -122,7 +122,7 @@ const PAGE_SIZE = 8;
    Component
 ───────────────────────────────────────── */
 const AddBankDetails: React.FC = () => {
-  const { addToast } = useToast();
+  const { showToast } = useToast();
 
   /* state */
   const [records, setRecords] = useState<BankAccount[]>(SEED);
@@ -172,7 +172,7 @@ const AddBankDetails: React.FC = () => {
       };
       setRecords((prev) => prev.map((r) => (r.id === updated.id ? updated : r)));
       auditLog('Update', updated);
-      addToast('Data Saved Successfully', 'success');
+      showToast('Data Saved Successfully', 'success');
     } else {
       /* add */
       const newAccount: BankAccount = {
@@ -182,7 +182,7 @@ const AddBankDetails: React.FC = () => {
       };
       setRecords((prev) => [...prev, newAccount]);
       auditLog('Create', newAccount);
-      addToast('Data Saved Successfully', 'success');
+      showToast('Data Saved Successfully', 'success');
     }
     closeForm();
   };

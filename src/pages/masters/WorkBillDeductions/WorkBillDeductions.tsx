@@ -59,7 +59,7 @@ const PAGE_SIZE = 8;
 
 /* ── Component ── */
 const WorkBillDeductions: React.FC = () => {
-  const { addToast } = useToast();
+  const { showToast } = useToast();
   const { role } = useAuth();
   const isReadOnly = role === 'ULB_ADMIN';
 
@@ -101,11 +101,11 @@ const WorkBillDeductions: React.FC = () => {
       setRecords((prev) =>
         prev.map((r) => (r.id === modal.deduction!.id ? { ...modal.deduction!, ...data } : r)),
       );
-      addToast('Deduction updated successfully', 'success');
+      showToast('Deduction updated successfully', 'success');
     } else {
       const newRecord: Deduction = { ...data, id: Date.now().toString() };
       setRecords((prev) => [newRecord, ...prev]);
-      addToast('Deduction added successfully', 'success');
+      showToast('Deduction added successfully', 'success');
     }
     closeModal();
   };

@@ -26,7 +26,7 @@ interface LevelModalProps {
   defaultSubHeadId?:     number;
 }
 
-const EMPTY_COMMON = { code: '', nameEnglish: '', nameKannada: '', status: 'Active' as AccountStatus };
+// const EMPTY_COMMON = { code: '', nameEnglish: '', nameKannada: '', status: 'Active' as AccountStatus };
 
 const LEVEL_TITLES: Record<ModalLevel, string> = {
   'account-type': 'Account Type',

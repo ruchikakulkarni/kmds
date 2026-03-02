@@ -207,7 +207,7 @@ const AccountCodeTab: React.FC = () => {
   }, [activeLevel, filteredAt, filteredMh, filteredMin, filteredSh, filteredDc, allCodes]);
 
   const totalPages  = Math.ceil(currentItems.length / PAGE_SIZE);
-  const pagedItems  = currentItems.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  const pagedItems = currentItems.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   /* ── Open modal helpers ── */
   const openAdd = () => {
@@ -475,7 +475,7 @@ const AccountCodeTab: React.FC = () => {
     }
 
     /* all-codes */
-    return (pagedItems as typeof allCodes).map((row, idx) => (
+    return (pagedItems as unknown as typeof allCodes).map((row, idx) => (
       <tr key={row.id} className={styles.tr}>
         <td className={styles.td}>{(page - 1) * PAGE_SIZE + idx + 1}</td>
         <td className={styles.td}><span className={styles.compositeChip}>{row.compositeCode}</span></td>

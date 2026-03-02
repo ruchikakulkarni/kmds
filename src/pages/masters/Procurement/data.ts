@@ -267,6 +267,8 @@ export const PROC_SEED: ProcurementRecord[] = [
     supplierType: '',
     sourcesOfFinancing: [{ id: 's1', source: 'AMRUT 2.0', subSource: 'Urban Roads', amount: '2500000' }],
     status: 'Approved & Shared',
+    actionPlanDate: '2026-01-10',
+    actionPlanResolutionNumber: 'APR-2026-002',
   },
   {
     id: 'proc-2',
@@ -308,6 +310,8 @@ export const PROC_SEED: ProcurementRecord[] = [
     supplierType: 'Manufacturer',
     sourcesOfFinancing: [{ id: 's2', source: 'Municipal Fund', subSource: 'Own Revenue', amount: '850000' }],
     status: 'Work Order Initiated',
+    actionPlanDate: '2026-01-10',
+    actionPlanResolutionNumber: 'APR-2026-002',
   },
   {
     id: 'proc-3',
@@ -356,6 +360,8 @@ export const PROC_SEED: ProcurementRecord[] = [
     supplierType: '',
     sourcesOfFinancing: [{ id: 's3', source: 'State Government Grant', subSource: 'Infrastructure', amount: '1200000' }],
     status: 'SWO Initiated',
+    actionPlanDate: '2026-01-10',
+    actionPlanResolutionNumber: 'APR-2026-002',
   },
   {
     id: 'proc-4',
@@ -401,6 +407,8 @@ export const PROC_SEED: ProcurementRecord[] = [
     supplierType: '',
     sourcesOfFinancing: [{ id: 's4', source: 'Municipal Fund', subSource: 'Own Revenue', amount: '45000' }],
     status: 'Send Back for Corrections',
+    actionPlanDate: '2026-01-10',
+    actionPlanResolutionNumber: 'APR-2026-002',
   },
   {
     id: 'proc-5',
@@ -445,5 +453,7 @@ export const PROC_SEED: ProcurementRecord[] = [
     supplierType: '',
     sourcesOfFinancing: [{ id: 's5', source: 'AMRUT 2.0', subSource: 'Water Supply', amount: '5000000' }],
     status: 'Work Order Initiated',
+    actionPlanDate: '2026-01-10',
+    actionPlanResolutionNumber: 'APR-2026-002',
   },
 ];
