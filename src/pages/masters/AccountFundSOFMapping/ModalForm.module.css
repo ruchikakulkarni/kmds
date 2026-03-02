@@ -1,0 +1,219 @@
+/* ── Form layout ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+/* ── Label ── */
+.label {
+  font-size: var(--text-body-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+}
+
+.required {
+  color: var(--color-negative-500);
+  margin-left: 2px;
+}
+
+/* ── Select ── */
+.selectWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  width: 100%;
+  height: 36px;
+  padding: 0 var(--space-6) 0 var(--space-3);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-xs);
+  font-family: var(--font-primary);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-surface);
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.select:focus {
+  border-color: var(--color-border-focus);
+}
+
+.select:disabled {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.selectError {
+  border-color: var(--color-border-error);
+}
+
+.selectChevron {
+  position: absolute;
+  right: var(--space-2);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+/* ── Validation error ── */
+.error {
+  font-size: 0.75rem;
+  color: var(--color-negative-500);
+  margin: 0;
+}
+
+/* ── Autofill readonly box ── */
+.autofillBox {
+  background-color: var(--color-primary-25);
+  border: 1px solid var(--color-primary-100);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.autofillTitle {
+  font-size: 0.7rem;
+  font-weight: var(--font-semibold);
+  color: var(--color-primary-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 var(--space-2);
+}
+
+.autofillGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2) var(--space-6);
+}
+
+.autofillItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.autofillLabel {
+  font-size: 0.65rem;
+  font-weight: var(--font-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.autofillValue {
+  font-size: var(--text-body-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+}
+
+/* ── Section divider ── */
+.divider {
+  height: 1px;
+  background-color: var(--color-border-default);
+  margin: var(--space-1) 0;
+}
+
+/* ── Status radio group ── */
+.radioGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-1);
+}
+
+.radioLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-body-xs);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.radioInput {
+  accent-color: var(--color-primary-500);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+/* ── Footer buttons ── */
+.cancelBtn {
+  height: 36px;
+  padding: 0 var(--space-4);
+  background: none;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-xs);
+  font-weight: var(--font-medium);
+  font-family: var(--font-primary);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.cancelBtn:hover {
+  background-color: var(--color-neutral-50);
+  border-color: var(--color-border-focus);
+}
+
+.submitBtn {
+  height: 36px;
+  padding: 0 var(--space-5);
+  background-color: var(--color-primary-500);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-xs);
+  font-weight: var(--font-semibold);
+  font-family: var(--font-primary);
+  color: white;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.submitBtn:hover {
+  background-color: var(--color-primary-600);
+}
+
+.deleteConfirmBtn {
+  height: 36px;
+  padding: 0 var(--space-4);
+  background-color: var(--color-negative-500);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-xs);
+  font-weight: var(--font-semibold);
+  font-family: var(--font-primary);
+  color: white;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.deleteConfirmBtn:hover {
+  opacity: 0.88;
+}
+
+/* ── Delete confirm body ── */
+.confirmMessage {
+  font-size: var(--text-body-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}

@@ -1,0 +1,358 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-surface);
+}
+
+/* ── Top bar ── */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-4);
+  height: var(--header-height);
+  border-bottom: 1px solid var(--color-border-default);
+  background-color: var(--color-bg-surface);
+  flex-shrink: 0;
+}
+
+.topBarBrand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.emblem {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandTitle {
+  font-size: var(--text-body-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.brandSubtitle {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.3;
+}
+
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.topBarBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-xs);
+  font-family: var(--font-primary);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.topBarBtn:hover {
+  background-color: var(--color-neutral-100);
+}
+
+.topBarIcon {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.topBarIcon:hover {
+  background-color: var(--color-neutral-100);
+}
+
+.kmdsLogo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-left: var(--space-2);
+}
+
+/* ── Body split ── */
+.body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+/* ── Left hero ── */
+.hero {
+  position: relative;
+  flex: 0 0 55%;
+  background-image: url('/login-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-primary-700);
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(31, 58, 95, 0.82) 0%,
+    rgba(19, 39, 63, 0.7) 60%,
+    rgba(7, 20, 31, 0.6) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-12) var(--space-12);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.heroIcon {
+  margin-bottom: var(--space-4);
+}
+
+.heroTitle {
+  font-size: var(--text-h2);
+  font-weight: var(--font-bold);
+  color: white;
+  line-height: 1.25;
+  margin-bottom: var(--space-4);
+}
+
+
+/* ── Right form panel ── */
+.formPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  background-color: var(--color-bg-surface);
+  overflow-y: auto;
+}
+
+.form {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ── Form fields ── */
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.label {
+  font-size: var(--text-body-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-xs);
+  font-family: var(--font-primary);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-surface);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(31, 58, 95, 0.12);
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputWrapper .input {
+  padding-right: 2.5rem;
+}
+
+.inputAction {
+  position: absolute;
+  right: var(--space-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  padding: var(--space-1);
+}
+
+.fieldLink {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-1);
+}
+
+.link {
+  font-size: var(--text-body-xs);
+  color: var(--color-primary-500);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-primary);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ── CAPTCHA ── */
+.captchaBox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-neutral-100);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-2);
+}
+
+.captchaCode {
+  flex: 1;
+  font-family: monospace;
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-bold);
+  letter-spacing: 0.15em;
+  color: var(--color-text-primary);
+  user-select: none;
+}
+
+.captchaRefresh {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  padding: var(--space-1);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.captchaRefresh:hover {
+  background-color: var(--color-neutral-200);
+}
+
+/* ── Error message ── */
+.errorMsg {
+  font-size: var(--text-body-xs);
+  color: var(--color-error, #DC2626);
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  text-align: center;
+}
+
+/* ── Submit button ── */
+.submitBtn {
+  width: 100%;
+  height: 48px;
+  background-color: var(--color-primary-500);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-xs);
+  font-weight: var(--font-semibold);
+  font-family: var(--font-primary);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  margin-top: var(--space-2);
+}
+
+.submitBtn:hover {
+  background-color: var(--color-primary-600);
+}
+
+.submitBtn:active {
+  background-color: var(--color-primary-700);
+}
+
+.contactLine {
+  text-align: center;
+  font-size: var(--text-body-xs);
+  color: var(--color-text-secondary);
+}
+
+/* ── Footer ── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-primary-700);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.6875rem;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero {
+    display: none;
+  }
+
+  .formPanel {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .topBarBrand .brandSubtitle {
+    display: none;
+  }
+}

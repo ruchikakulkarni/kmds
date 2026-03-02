@@ -1,0 +1,103 @@
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-default);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-primary);
+  font-size: var(--text-body-xs);
+}
+
+.caption {
+  font-size: var(--text-body-xs);
+  color: var(--color-text-secondary);
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  caption-side: top;
+}
+
+/* ── Header ── */
+.thead {
+  background-color: var(--color-primary-500);
+}
+
+.th {
+  padding: var(--space-3) var(--space-4);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-body-xs);
+  color: var(--color-text-inverse);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.thSl {
+  width: 48px;
+  text-align: center;
+}
+
+/* ── Sticky Header ── */
+.stickyHeader .thead .th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* ── Rows ── */
+.tr {
+  border-bottom: 1px solid var(--color-border-default);
+  transition: background-color var(--transition-fast);
+}
+
+.tr:last-child {
+  border-bottom: none;
+}
+
+.tr:hover {
+  background-color: var(--color-primary-25);
+}
+
+.td {
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text-primary);
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+.tdSl {
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+/* ── Empty & Loading ── */
+.emptyCell,
+.loadingCell {
+  text-align: center;
+  padding: var(--space-10) var(--space-4);
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-sm);
+}
+
+.loadingCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.loadingSpinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-border-default);
+  border-top-color: var(--color-primary-500);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

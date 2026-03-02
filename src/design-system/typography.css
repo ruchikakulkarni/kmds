@@ -1,0 +1,88 @@
+/* ============================================
+   KMDS Design System - Typography
+   Font Family: Poppins (headings/body), Inter (UI labels)
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --font-primary: 'Poppins', sans-serif;
+  --font-ui:      'Inter', sans-serif;
+
+  /* ── Font Sizes ── */
+  --text-display-lg: 4.5rem;   /* 72px */
+  --text-h1:         4rem;     /* 64px */
+  --text-h2:         3rem;     /* 48px */
+  --text-h3:         2.25rem;  /* 36px */
+  --text-h4:         1.25rem;  /* 20px */
+  --text-h5:         1.125rem; /* 18px */
+  --text-body-md:    1.125rem; /* 18px */
+  --text-body-sm:    1rem;     /* 16px */
+  --text-body-xs:    0.875rem; /* 14px */
+  --text-caption:    0.75rem;  /* 12px */
+  --text-label:      0.6875rem;/* 11px */
+
+  /* ── Line Heights ── */
+  --leading-display-lg: 6.75rem;  /* 108px */
+  --leading-h1:         5.25rem;  /* 84px */
+  --leading-h2:         4rem;     /* 64px */
+  --leading-h3:         3.25rem;  /* 52px */
+  --leading-h4:         2.125rem; /* 34px */
+  --leading-h5:         1.75rem;  /* 28px */
+  --leading-body-md:    1.75rem;  /* 28px */
+  --leading-body-sm:    1.5rem;   /* 24px */
+  --leading-body-xs:    1.25rem;  /* 20px */
+  --leading-caption:    1.125rem; /* 18px */
+
+  /* ── Font Weights ── */
+  --font-regular:   400;
+  --font-medium:    500;
+  --font-semibold:  600;
+  --font-bold:      700;
+}
+
+/* ── Base Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-regular);
+  line-height: var(--leading-body-sm);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Heading Utilities ── */
+.text-display-lg { font-size: var(--text-display-lg); line-height: var(--leading-display-lg); font-family: var(--font-primary); }
+.text-h1 { font-size: var(--text-h1); line-height: var(--leading-h1); font-family: var(--font-primary); }
+.text-h2 { font-size: var(--text-h2); line-height: var(--leading-h2); font-family: var(--font-primary); }
+.text-h3 { font-size: var(--text-h3); line-height: var(--leading-h3); font-family: var(--font-primary); }
+.text-h4 { font-size: var(--text-h4); line-height: var(--leading-h4); font-family: var(--font-primary); }
+.text-h5 { font-size: var(--text-h5); line-height: var(--leading-h5); font-family: var(--font-primary); }
+.text-body-md { font-size: var(--text-body-md); line-height: var(--leading-body-md); }
+.text-body-sm { font-size: var(--text-body-sm); line-height: var(--leading-body-sm); }
+.text-body-xs { font-size: var(--text-body-xs); line-height: var(--leading-body-xs); }
+.text-caption  { font-size: var(--text-caption);  line-height: var(--leading-caption); }
+
+.font-regular  { font-weight: var(--font-regular); }
+.font-medium   { font-weight: var(--font-medium); }
+.font-semibold { font-weight: var(--font-semibold); }
+.font-bold     { font-weight: var(--font-bold); }
+
+.text-primary   { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-disabled  { color: var(--color-text-disabled); }
+.text-inverse   { color: var(--color-text-inverse); }
+.text-link      { color: var(--color-text-link); }
+.text-error     { color: var(--color-error); }
+.text-success   { color: var(--color-success); }
+.text-warning   { color: var(--color-warning); }

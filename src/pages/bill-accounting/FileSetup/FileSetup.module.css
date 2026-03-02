@@ -1,0 +1,499 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   FileSetup.module.css – Bill Accounting / File Setup creation page
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── PAGE ─────────────────────────────────────────────────────────────────── */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  max-width: 960px;
+}
+
+/* ── PAGE HEADER ──────────────────────────────────────────────────────────── */
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-1);
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ── READ-ONLY BANNER ─────────────────────────────────────────────────────── */
+.readonlyBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-tertiary-25, #EFF8FF);
+  border: 1px solid var(--color-tertiary-200, #BAE6FD);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  color: var(--color-tertiary-600, #0284C7);
+}
+
+/* ── FORM CARD ────────────────────────────────────────────────────────────── */
+.formCard {
+  background: #fff;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+/* ── SECTIONS ─────────────────────────────────────────────────────────────── */
+.section {
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-primary-100, #DBEAFE);
+}
+
+/* Conditional section – warm tint */
+.conditionalSection {
+  background: #FFFCEB;
+  border-top: 2px solid var(--color-warning-200, #FDE68A);
+}
+
+.conditionalHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+/* Override sectionTitle when inside conditionalHeader so margin/border don't double */
+.conditionalHeader .sectionTitle {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* ── GRID LAYOUTS ─────────────────────────────────────────────────────────── */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4) var(--space-6);
+}
+
+.grid1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+/* ── FIELD ────────────────────────────────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.req {
+  color: var(--color-negative-500);
+  line-height: 1;
+}
+
+.hint {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.hint2 {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.autoBadge {
+  margin-left: var(--space-1);
+}
+
+/* ── INPUTS ───────────────────────────────────────────────────────────────── */
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: var(--color-text-primary);
+  background: #fff;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px var(--color-primary-25, #EFF6FF);
+}
+
+.inputError {
+  border-color: var(--color-border-error);
+}
+
+.inputError:focus {
+  box-shadow: 0 0 0 3px var(--color-negative-25, #FFF5F5);
+}
+
+/* Readonly fields */
+.readonly {
+  background: var(--color-neutral-50, #F9FAFB);
+  color: var(--color-text-secondary);
+  cursor: default;
+  border-color: var(--color-border-default);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.5;
+}
+
+/* Custom arrow for <select> */
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%23737373' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  padding-right: var(--space-8);
+  cursor: pointer;
+}
+
+.select:disabled {
+  background-color: var(--color-neutral-50, #F9FAFB);
+  color: var(--color-text-secondary);
+  cursor: default;
+}
+
+/* ── FIELD META ROW (error + char count) ─────────────────────────────────── */
+.fieldMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-height: 1.125rem;
+}
+
+.error {
+  font-size: 0.75rem;
+  color: var(--color-negative-500);
+  flex: 1;
+}
+
+.charCount {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── FORM FOOTER ──────────────────────────────────────────────────────────── */
+.formFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-neutral-25, #FAFAFA);
+  border-top: 1px solid var(--color-border-default);
+}
+
+/* ── BUTTONS ──────────────────────────────────────────────────────────────── */
+.cancelBtn {
+  padding: 0.5rem var(--space-4);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--color-text-primary);
+  background: #fff;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.cancelBtn:hover {
+  background: var(--color-neutral-50, #F9FAFB);
+  border-color: var(--color-neutral-300, #D1D5DB);
+}
+
+.submitBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.5rem var(--space-5);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #fff;
+  background: var(--color-primary-500);
+  border: 1px solid var(--color-primary-500);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.submitBtn:hover {
+  background: var(--color-primary-600);
+  border-color: var(--color-primary-600);
+}
+
+/* ── CONFIRM DIALOG INTERNALS ─────────────────────────────────────────────── */
+.confirmBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-2) 0 var(--space-1);
+  text-align: center;
+}
+
+.confirmIconWrap {
+  line-height: 0;
+}
+
+.confirmMessage {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.confirmDetails {
+  width: 100%;
+  background: var(--color-neutral-50, #F9FAFB);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  text-align: left;
+}
+
+.confirmRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.8125rem;
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.confirmRow:last-child {
+  border-bottom: none;
+}
+
+.confirmKey {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.confirmVal {
+  color: var(--color-text-primary);
+  text-align: right;
+  word-break: break-all;
+}
+
+.confirmWarning {
+  font-size: 0.8125rem;
+  color: var(--color-negative-600, #DC2626);
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-negative-25, #FFF5F5);
+  border: 1px solid var(--color-negative-100, #FEE2E2);
+  border-radius: var(--radius-sm);
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.confirmFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.confirmBtn {
+  padding: 0.5rem var(--space-4);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #fff;
+  background: var(--color-primary-500);
+  border: 1px solid var(--color-primary-500);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.confirmBtn:hover {
+  background: var(--color-primary-600);
+  border-color: var(--color-primary-600);
+}
+
+/* ── SUCCESS / FROZEN STATE ───────────────────────────────────────────────── */
+.successCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-10) var(--space-6);
+  background: #fff;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.04);
+  text-align: center;
+}
+
+.successIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-positive-100, #D1FAE5);
+  color: var(--color-positive-600, #059669);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.successTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.successSubtitle {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.successMeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--color-neutral-50, #F9FAFB);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  width: 100%;
+  max-width: 480px;
+  text-align: left;
+}
+
+.metaRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4);
+  border-right: 1px solid var(--color-border-default);
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.metaRow:nth-child(even) {
+  border-right: none;
+}
+
+.metaRow:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+.metaKey {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.metaVal {
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+}
+
+.successActions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────────────────────── */
+@media (max-width: 680px) {
+  .page {
+    padding: var(--space-4);
+  }
+
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+
+  .pageHeader {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .formFooter {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .cancelBtn,
+  .submitBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .successMeta {
+    grid-template-columns: 1fr;
+  }
+
+  .metaRow {
+    border-right: none;
+  }
+
+  .successActions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+}

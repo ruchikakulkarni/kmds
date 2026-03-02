@@ -1,0 +1,175 @@
+/* ============================================
+   KMDS Design System - Color & Spacing Tokens
+   ============================================ */
+
+:root {
+  /* ── Primary Colors ── */
+  --color-primary-25:  #F4F7FA;
+  --color-primary-50:  #E9EEF5;
+  --color-primary-100: #D3DDEB;
+  --color-primary-200: #A7BBD7;
+  --color-primary-300: #7B99C3;
+  --color-primary-400: #4F77AF;
+  --color-primary-500: #1F3A5F;  /* Main */
+  --color-primary-600: #19314F;
+  --color-primary-700: #13273F;
+  --color-primary-800: #0D1E2F;
+  --color-primary-900: #07141F;
+
+  /* ── Secondary Colors ── */
+  --color-secondary-25:  #F6F3FF;
+  --color-secondary-50:  #ECE7FF;
+  --color-secondary-100: #D9CFFF;
+  --color-secondary-200: #B39FFF;
+  --color-secondary-300: #8D6FFF;
+  --color-secondary-400: #673FFF;
+  --color-secondary-500: #7A44FF;  /* Main */
+  --color-secondary-600: #6236CC;
+  --color-secondary-700: #492999;
+  --color-secondary-800: #301C66;
+  --color-secondary-900: #180E33;
+
+  /* ── Tertiary Colors ── */
+  --color-tertiary-25:  #F2F8FF;
+  --color-tertiary-50:  #E6F0FF;
+  --color-tertiary-100: #CCE0FF;
+  --color-tertiary-200: #99C2FF;
+  --color-tertiary-300: #66A3FF;
+  --color-tertiary-400: #3385FF;
+  --color-tertiary-500: #3994FF;  /* Main */
+  --color-tertiary-600: #1873DE;
+  --color-tertiary-700: #0053B5;
+  --color-tertiary-800: #00418E;
+  --color-tertiary-900: #002A5C;
+
+  /* ── Warning Colors ── */
+  --color-warning-25:  #FFFCF6;
+  --color-warning-50:  #FFF9ED;
+  --color-warning-100: #FFF3DB;
+  --color-warning-200: #FFE6B7;
+  --color-warning-300: #FFDA92;
+  --color-warning-400: #FFCD6E;
+  --color-warning-500: #FFC14A;  /* Main */
+  --color-warning-600: #EBA622;
+  --color-warning-700: #D18A02;
+  --color-warning-800: #9F6800;
+  --color-warning-900: #5A3B00;
+
+  /* ── Negative/Error Colors ── */
+  --color-negative-25:  #FFF8F7;
+  --color-negative-50:  #FFF1F0;
+  --color-negative-100: #FFE2E0;
+  --color-negative-200: #FFC6C2;
+  --color-negative-300: #FFA9A3;
+  --color-negative-400: #FF8D85;
+  --color-negative-500: #FF554A;  /* Main */
+  --color-negative-600: #EA483D;
+  --color-negative-700: #D7392E;
+  --color-negative-800: #C8271C;
+  --color-negative-900: #B71409;
+
+  /* ── Positive/Success Colors ── */
+  --color-positive-25:  #F4FCF7;
+  --color-positive-50:  #E9FAF0;
+  --color-positive-100: #D3F4E0;
+  --color-positive-200: #A7E9C1;
+  --color-positive-300: #7BDFA3;
+  --color-positive-400: #4FD484;
+  --color-positive-500: #23C965;  /* Main */
+  --color-positive-600: #08B94E;
+  --color-positive-700: #02983E;
+  --color-positive-800: #00732E;
+  --color-positive-900: #00481D;
+
+  /* ── Neutral / Grey ── */
+  --color-neutral-0:   #FFFFFF;
+  --color-neutral-50:  #F9FAFB;
+  --color-neutral-100: #F3F4F6;
+  --color-neutral-200: #E5E7EB;
+  --color-neutral-300: #D1D5DB;
+  --color-neutral-400: #9CA3AF;
+  --color-neutral-500: #6B7280;
+  --color-neutral-600: #4B5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #222222;
+  --color-neutral-900: #111827;
+
+  /* ── Semantic Aliases ── */
+  --color-brand:        var(--color-primary-500);
+  --color-brand-dark:   var(--color-primary-600);
+  --color-brand-light:  var(--color-primary-25);
+  --color-accent:       var(--color-secondary-500);
+  --color-link:         var(--color-tertiary-600);
+  --color-success:      var(--color-positive-500);
+  --color-error:        var(--color-negative-500);
+  --color-warning:      var(--color-warning-500);
+  --color-info:         var(--color-tertiary-500);
+
+  /* ── Text Colors ── */
+  --color-text-primary:   #222222;
+  --color-text-secondary: #737373;
+  --color-text-muted:     #9CA3AF;
+  --color-text-disabled:  #9CA3AF;
+  --color-text-inverse:   #FFFFFF;
+  --color-text-link:      var(--color-tertiary-600);
+
+  /* ── Border Colors ── */
+  --color-border-default:  #E5E7EB;
+  --color-border-strong:   #D1D5DB;
+  --color-border-focus:    var(--color-primary-500);
+  --color-border-error:    var(--color-negative-500);
+
+  /* ── Background Colors ── */
+  --color-bg-default:  #F5F6FA;
+  --color-bg-page:     #F5F6FA;
+  --color-bg-surface:  #FFFFFF;
+  --color-bg-subtle:   #F9FAFB;
+  --color-bg-muted:    #F3F4F6;
+
+  /* ── Spacing ── */
+  --space-0:  0;
+  --space-1:  0.25rem;  /*  4px */
+  --space-2:  0.5rem;   /*  8px */
+  --space-3:  0.75rem;  /* 12px */
+  --space-4:  1rem;     /* 16px */
+  --space-5:  1.25rem;  /* 20px */
+  --space-6:  1.5rem;   /* 24px */
+  --space-7:  1.75rem;  /* 28px */
+  --space-8:  2rem;     /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+
+  /* ── Border Radius ── */
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   8px;
+  --radius-xl:   12px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+
+  /* ── Transitions ── */
+  --transition-fast:   150ms ease;
+  --transition-base:   200ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow:   300ms ease;
+
+  /* ── Z-Index ── */
+  --z-dropdown:  100;
+  --z-sticky:    200;
+  --z-overlay:   300;
+  --z-modal:     400;
+  --z-toast:     500;
+
+  /* ── Layout ── */
+  --header-height:  142px;
+  --header-topbar-height: 30px;
+  --header-main-height: 112px;
+  --sidebar-width:  324px;
+  --sidebar-collapsed-width: 0px;
+}

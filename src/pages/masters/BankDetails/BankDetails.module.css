@@ -1,0 +1,257 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 1200px;
+}
+
+/* ── Page header ── */
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.pageTitle {
+  font-size: var(--text-h4);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  line-height: 1.3;
+  margin-bottom: var(--space-1);
+}
+
+.pageSubtitle {
+  font-size: var(--text-body-xs);
+  color: var(--color-text-secondary);
+}
+
+/* ── Content area ── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ── Toolbar ── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.toolbarLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* Search */
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--space-3);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 300px;
+  height: 36px;
+  padding: 0 var(--space-3) 0 calc(var(--space-3) + 16px + var(--space-2));
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-xs);
+  font-family: var(--font-primary);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-surface);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.searchInput:focus {
+  border-color: var(--color-border-focus);
+}
+
+/* Filter */
+.filterBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filterSelect {
+  height: 36px;
+  padding: 0 var(--space-6) 0 var(--space-3);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-xs);
+  font-family: var(--font-primary);
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-surface);
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.filterSelect:focus {
+  border-color: var(--color-border-focus);
+}
+
+.filterChevron {
+  position: absolute;
+  right: var(--space-2);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+/* Add button */
+.addBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 40px;
+  padding: 0 var(--space-4);
+  background-color: var(--color-primary-500);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-xs);
+  font-weight: var(--font-semibold);
+  font-family: var(--font-primary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--transition-fast);
+}
+
+.addBtn:hover {
+  background-color: var(--color-primary-600);
+}
+
+/* ── Table card ── */
+.tableCard {
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-default);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.tableHeader {
+  background-color: var(--color-primary-500);
+  padding: var(--space-3) var(--space-4);
+}
+
+.tableTitle {
+  font-size: var(--text-body-xs);
+  font-weight: var(--font-semibold);
+  color: white;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--color-border-default);
+  white-space: nowrap;
+  background-color: var(--color-bg-subtle);
+}
+
+.tr {
+  transition: background-color var(--transition-fast);
+}
+
+.tr:hover {
+  background-color: var(--color-neutral-50);
+}
+
+.tr + .tr .td {
+  border-top: 1px solid var(--color-border-default);
+}
+
+.td {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-body-xs);
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border-default);
+  vertical-align: middle;
+}
+
+.empty {
+  padding: var(--space-12) var(--space-4);
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-xs);
+}
+
+/* ── Edit button ── */
+.editBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-xs);
+  font-family: var(--font-primary);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.editBtn:hover {
+  background-color: var(--color-neutral-100);
+  color: var(--color-primary-500);
+}
+
+/* ── Pagination bar ── */
+.paginationBar {
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--color-border-default);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Tab placeholder ── */
+.tabPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-16);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.tabPlaceholder p {
+  font-size: var(--text-body-xs);
+}

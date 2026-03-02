@@ -1,0 +1,241 @@
+/* ── Header shell ── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  z-index: var(--z-sticky);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top accessibility bar ── */
+.topBar {
+  height: var(--header-topbar-height);
+  background-color: #1F3A5F;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 24px;
+  flex-shrink: 0;
+}
+
+.topBarControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fontSizeBtn {
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fontSizeTrack {
+  width: 88px;
+  height: 5px;
+  background: #fff;
+  border-radius: 3px;
+  position: relative;
+}
+
+.fontSizeTrackFill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 47px;
+  height: 5px;
+  background: #91C7FF;
+  border-radius: 3px;
+}
+
+.fontSizeThumb {
+  position: absolute;
+  left: 40px;
+  top: -6px;
+  width: 17px;
+  height: 17px;
+  background: #1F3A5F;
+  border-radius: 3px;
+}
+
+.topBarDivider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255,255,255,0.3);
+  margin: 0 4px;
+}
+
+.globeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.langToggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.langKannada {
+  color: #DBDBDB;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.langEng {
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.langToggleTrack {
+  width: 40px;
+  height: 22px;
+  background: #fff;
+  border-radius: 11px;
+  position: relative;
+}
+
+.langToggleThumb {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 18px;
+  height: 18px;
+  background: #1F3A5F;
+  border-radius: 9px;
+}
+
+/* ── Main white header ── */
+.mainHeader {
+  height: var(--header-main-height);
+  background: #fff;
+  border-bottom: 1px solid #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* ── Brand / Left ── */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.logo1 {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo2 {
+  width: 93px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.brandTitle {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.brandSubtitle {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* ── Right ── */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  font-size: 16px;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  border-radius: 4px;
+  transition: background-color 150ms ease;
+  white-space: nowrap;
+}
+
+.actionBtn:hover {
+  background-color: #F3F4F6;
+}
+
+.iconBtn {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 150ms ease;
+  text-decoration: none;
+  color: #222;
+}
+
+.iconBtn:hover {
+  background-color: #F3F4F6;
+}
+
+.kmdsLogo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}

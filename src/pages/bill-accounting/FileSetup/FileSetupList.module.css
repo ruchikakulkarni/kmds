@@ -1,0 +1,396 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   FileSetupList.module.css – Bill Accounting / File Setup list page
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── PAGE ─────────────────────────────────────────────────────────────────── */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+}
+
+/* ── PAGE HEADER ──────────────────────────────────────────────────────────── */
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ── TOOLBAR ──────────────────────────────────────────────────────────────── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.showEntries {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.entriesSelect {
+  padding: var(--space-1) var(--space-2);
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: var(--color-text-primary);
+  background: #fff;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  outline: none;
+  cursor: pointer;
+}
+
+.entriesSelect:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px var(--color-primary-25, #EFF6FF);
+}
+
+.searchWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  padding: var(--space-2) var(--space-8) var(--space-2) var(--space-3);
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: var(--color-text-primary);
+  background: #fff;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  outline: none;
+  width: 220px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.searchInput:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px var(--color-primary-25, #EFF6FF);
+}
+
+.searchIcon {
+  position: absolute;
+  right: var(--space-3);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+/* ── TABLE WRAPPER (horizontal scroll) ───────────────────────────────────── */
+.tableWrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* ── TABLE ────────────────────────────────────────────────────────────────── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+/* Header */
+.table thead tr {
+  background: var(--color-primary-500);
+}
+
+.table thead th {
+  padding: var(--space-3) var(--space-3);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  line-height: 1.4;
+  white-space: normal;
+  min-width: 72px;
+}
+
+.table thead th:last-child {
+  border-right: none;
+}
+
+/* Body */
+.table tbody tr {
+  border-bottom: 1px solid var(--color-border-default);
+  background: #fff;
+  transition: background 0.12s;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: var(--color-primary-25, #EFF6FF);
+}
+
+.inactiveRow {
+  background: var(--color-neutral-25, #FAFAFA) !important;
+  color: var(--color-text-muted);
+}
+
+.inactiveRow:hover {
+  background: var(--color-neutral-50, #F3F4F6) !important;
+}
+
+.table tbody td {
+  padding: var(--space-3) var(--space-3);
+  color: var(--color-text-primary);
+  border-right: 1px solid var(--color-border-default);
+  vertical-align: middle;
+  font-size: 0.8125rem;
+}
+
+.table tbody td:last-child {
+  border-right: none;
+}
+
+/* ── CELL VARIANTS ────────────────────────────────────────────────────────── */
+.centerCell {
+  text-align: center;
+}
+
+/* File Subject / File Number – clickable style matching screenshot */
+.linkText {
+  color: var(--color-negative-500, #EF4444);
+  cursor: pointer;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.linkText:hover {
+  text-decoration: underline;
+}
+
+.emptyCell {
+  text-align: center;
+  padding: var(--space-8) !important;
+  color: var(--color-text-muted);
+  font-style: italic;
+  border-right: none !important;
+}
+
+/* ── ACTION BUTTONS ───────────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.editBtn,
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.14s, border-color 0.14s;
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.editBtn {
+  color: var(--color-primary-500);
+  border-color: var(--color-primary-200, #BFDBFE);
+}
+
+.editBtn:hover {
+  background: var(--color-primary-50, #EFF6FF);
+  border-color: var(--color-primary-400, #60A5FA);
+}
+
+.deleteBtn {
+  color: var(--color-negative-500);
+  border-color: var(--color-negative-200, #FECACA);
+}
+
+.deleteBtn:hover {
+  background: var(--color-negative-25, #FFF5F5);
+  border-color: var(--color-negative-400, #F87171);
+}
+
+/* ── TABLE FOOTER ─────────────────────────────────────────────────────────── */
+.tableFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.entryInfo {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+}
+
+/* ── PAGINATION ───────────────────────────────────────────────────────────── */
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.pageBtn {
+  padding: var(--space-1) var(--space-3);
+  font-size: 0.8125rem;
+  font-family: inherit;
+  color: var(--color-text-secondary);
+  background: #fff;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  min-width: 36px;
+  transition: background 0.14s, border-color 0.14s, color 0.14s;
+}
+
+.pageBtn:hover:not(:disabled) {
+  background: var(--color-neutral-50, #F3F4F6);
+  border-color: var(--color-neutral-300, #D1D5DB);
+  color: var(--color-text-primary);
+}
+
+.pageBtn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.pageBtnActive {
+  background: var(--color-primary-500) !important;
+  border-color: var(--color-primary-500) !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* ── FILE SETUP BUTTON ────────────────────────────────────────────────────── */
+.fileSetupBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: #fff;
+  background: var(--color-primary-500);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.fileSetupBtn:hover {
+  background: var(--color-primary-600);
+}
+
+/* ── DELETE CONFIRM MODAL ─────────────────────────────────────────────────── */
+.confirmMsg {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.6;
+  padding: var(--space-2) 0;
+}
+
+.confirmFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.cancelBtn {
+  padding: 0.5rem var(--space-4);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--color-text-primary);
+  background: #fff;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cancelBtn:hover {
+  background: var(--color-neutral-50, #F9FAFB);
+}
+
+.deleteCfmBtn {
+  padding: 0.5rem var(--space-4);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #fff;
+  background: var(--color-negative-500);
+  border: 1px solid var(--color-negative-500);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.deleteCfmBtn:hover {
+  background: var(--color-negative-600, #DC2626);
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .page {
+    padding: var(--space-4);
+  }
+
+  .tableFooter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .entryInfo {
+    text-align: center;
+  }
+
+  .pagination {
+    justify-content: center;
+  }
+
+  .fileSetupBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+}
